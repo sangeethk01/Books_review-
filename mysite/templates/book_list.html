@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book List</title>
+
+    <style>
+        ul{
+            color: aliceblue;
+            
+        }
+        body{
+            background-color: rgba(171, 248, 238, 0.911);
+
+            line-height: 2;
+        }
+        li{
+            color: rgb(247, 105, 65);
+        }
+    </style>
+</head>
+<body>
+    <h1>Books/Review books</h1>
+    <ol>
+        {% for book in books %}
+            <li><a href="{% url 'book_detail' book.id %}">{{ book.title }}</a> by {{ book.auther }}</li>
+        {% endfor %}
+    </ol>
+   
+</body>
+</html>
